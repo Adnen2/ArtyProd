@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Start your development with Creative Studio landing page.">
+    <meta name="author" content="Devcrud">
+    <title>ArtyProd</title>
+
+    <!-- font icons -->
+    <link rel="stylesheet" href="/static/assets/vendors/themify-icons/css/themify-icons.css">
+
+    <!-- Bootstrap + Creative Studio main styles -->
+	<link rel="stylesheet" href="/static/assets/css/creative-studio.css">
+
+</head>
+{% block content %}
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+  <!-- Page Navigation -->
+  <nav class="navbar custom-navbar navbar-expand-lg navbar-dark" data-spy="affix" data-offset-top="20">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="/static/assets/imgs/logo.png" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, Creative studio Landing page">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#service">Service</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#portfolio">Portfolio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#team">Team</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#Project">Project</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'contact'%}">Contact</a>
+                </li>
+                {% if user.is_authenticated %}
+                    <li class="nav-item active">
+                    <a class="nav-link" href="#">{{user}}</a>
+                    </li>
+                    <li class="nav-item active">
+                    <a class="nav-link btn btn-primary btn-sm ml-lg-3" href="{% url 'logout' %}">Déconnexion</a>
+                    </li>
+
+                    {% else %}
+                    <li class="nav-item active">
+                    <a class="nav-link btn btn-primary btn-sm ml-lg-3" href="{% url 'login' %}">Connexion</a>
+                    </li>
+                    <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'register' %}">Inscription</a>
+                    </li>
+                    {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>
+    <!-- End Of Page Navigation -->
+
+    <!-- Page Header -->
+    <header class="header">
+      <div class="overlay">
+          <h6 class="subtitle">Small Team With Big Ideas</h6>
+          <h1 class="title">ArtyProd Creative</h1>
+          <div class="buttons text-center">
+              <a href="http://127.0.0.1:8000/applicationweb/#service" class="btn btn-primary rounded w-lg btn-lg my-1">Our Service</a>
+              <a href="http://127.0.0.1:8000/applicationweb/contact/#contact" class="btn btn-outline-light rounded w-lg btn-lg my-1">Contact Us</a>
+          </div>              
+      </div>      
+  </header>
+  <!-- End Of Page Header -->
+
+    <!-- Box -->
+    <div class="box text-center">
+            <div class="box-item">
+                <a href="{% url 'scenerisation_services' %}"><i class="ti-bookmark"></i></a>
+                <h6 class="box-title">Scenarisation</h6>
+                <p>La scénarisation est la création d'un scénario ou d'un plan détaillé pour une production médiatique telle qu'un film, une émission de télévision ou une publicité.</p>
+            </div>
+        
+      <div class="box-item">
+        <a href="{% url 'object3d_service' %}"><i class="ti-3d"><img src="https://img.icons8.com/ios/50/ff214f/3d.png"/></i></a>
+          <h6 class="box-title">3D Object</h6>
+          <p>Les objets 3D sont des modèles tridimensionnels créés sur un ordinateur pour représenter des objets physiques ou abstraits dans un espace 3D.</p>
+      </div>
+      <div class="box-item">
+        <a href="{% url 'show_charte_graphique' %}"><i class="mobile"><img src="https://img.icons8.com/ios/50/ff214f/illustrator--v1.png"/></i></a>
+          <h6 class="box-title">Graphical Charter</h6>
+          <p>Une charte graphique est un document qui définit les règles d'utilisation des éléments d'identité visuelle d'une entreprise, tels que le logo, les couleurs, la typographie et autres éléments de design.</p>
+      </div>
+  </div>
+  <!-- End of Box -->
+      <!-- About Section -->
+      <section id="about">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-5 col-lg-4">
+                    <img src="/static/assets/imgs/about.jpg" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, Creative studio Landing page" class="w-100 img-thumbnail mb-3">
+                </div>
+                <div class="col-md-7 col-lg-8">
+                    <h6 class="section-subtitle mb-0">We Create</h6>
+                    <h6 class="section-title mb-3">Awesome Work</h6>
+                    <p>The agency, "ArtyProd", is a company that specializes in graphic design, audiovisual production, and 3D design. They aim to create a web application that showcases their various services to the public.</p>
+
+                   <p>The application allows users to register through a form, which requires personal information such as their name, email, and phone number. This information is used to personalize their experience and to enable the agency to contact them if necessary.</p>
+                        
+                    <p> Visitors who do not wish to register are able to browse the agency's completed projects to gain an understanding of their services. However, only registered users are able to access the agency's services. Without registering, users will not have any additional privileges beyond what a simple visitor has.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End of About Section -->
+        <!-- About Section with bg -->
+        <section class="has-bg-img py-md">
+            <div class="container text-center">
+                <h6 class="section-subtitle">We See</h6>
+                <h6 class="section-title mb-6">What Other Don't See.</h6>
+                <div class="widget mb-4">
+                    <div class="widget-item">
+                        <i class="ti-notepad"></i>
+                        <h4>Planning</h4>
+                    </div>
+                    <div class="widget-item">
+                        <i class="ti-layout"></i>
+                        <h4>Mockup</h4>
+                    </div>
+                    <div class="widget-item">
+                        <i class="ti-filter"></i>
+                        <h4>Develope</h4>
+                    </div>
+                    <div class="widget-item">
+                        <i class="ti-thumb-up"></i>
+                        <h4>Provide</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Of About Sectoin -->
+       <section id="service">
+    <div class="container">
+        <h6 class="section-subtitle text-center">Making it Happen</h6>
+        <h5 class="section-title text-center mb-6">Our Services</h5> 
+        <div class="row" id="row">
+            {% for service in services|slice:":8" %}
+                <div class="col-sm-4 col-md-3">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h2 class="mb-4"><i class="text-primary"><a href="{% url 'service_detail' service.id %}">{{ service.service_type }}</a></i></h2>
+                            <h6 class="card-title">{{ service.title }}</h6>
+                            <p>{{ service.description }}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        {% if services|length > 8 %}
+            <div class="text-center mt-4">
+                <button class="btn btn-primary" id="see-more-services">See More Services</button>
+            </div>
+        {% endif %}
+    </div>
+</section>
+<script>
+    const seeMoreServicesBtn = document.getElementById('see-more-services');
+    const ser=document.getElementById('row');
+    seeMoreServicesBtn.addEventListener('click', () => {
+      ser.innerHTML = `{% for service in services %}
+      <div class="col-sm-4 col-md-3">
+          <div class="card mb-4">
+              <div class="card-body">
+                  <h2 class="mb-4"><i class="text-primary"><a href="{% url 'service_detail' service.id %}">{{ service.service_type }}</a></i></h2>
+                  <h6 class="card-title">{{ service.title }}</h6>
+                  <p>{{ service.description }}</p>
+              </div>
+          </div>
+      </div>
+  {% endfor %}`;
+      seeMoreServicesBtn.style.display = 'none';
+    });
+  </script>
+
+  <!-- Portfolio section -->
+  <section id="portfolio">
+    <div class="container text-center">
+        <h6 class="section-subtitle">Our Awesome Works</h6>
+        <h6 class="section-title mb-5">Our Portfolio</h6>
+        <div class="row" id="row1">
+            {% for por in portfolio|slice:":6"  %}
+            <div class="col-sm-4">
+                <div class="img-wrapper">
+                    <img src="/media/{{por.image}}" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, Creative studio Landing page">
+                    <div class="overlay">
+                        <div class="overlay-infos">
+                            <h5>{{por.title}}</h5>
+                            <a href="{% url 'portfolio_detail' por.id %}"><i class="ti-zoom-in"></i></a>
+                            <a href="{% url 'portfolio_detail' por.id %}#comment"><i class="ti-comments"></i></a>
+                        </div>  
+                    </div>
+                </div>                
+            </div>
+            {% endfor %}
+        </div>
+        {% if portfolio|length > 6 %}
+            <div class="text-center mt-4">
+                <button class="btn btn-primary" id="see-more-portfolio">See More portfolio</button>
+            </div>
+        {% endif %}
+    </div>
+</section>
+<script>
+    const seeMoreportfolioBtn = document.getElementById('see-more-portfolio');
+    const por=document.getElementById('row1');
+    seeMoreportfolioBtn.addEventListener('click', () => {
+      por.innerHTML = `{% for por in portfolio  %}
+      <div class="col-sm-4">
+          <div class="img-wrapper">
+              <img src="/media/{{por.image}}" alt="">
+              <div class="overlay">
+                  <div class="overlay-infos">
+                      <h5>{{por.title}}</h5>
+                      <a href="{% url 'portfolio_detail' por.id %}"><i class="ti-zoom-in"></i></a>
+                      <a href="{% url 'portfolio_detail' por.id %}#comment"><i class="ti-comments"></i></a>
+                  </div>  
+              </div>
+          </div>                
+      </div>
+{% endfor %}`;
+        seeMoreportfolioBtn.style.display = 'none';
+    });
+  </script>
+    <!-- Team Section -->
+      <section id="team">
+        <div class="container">
+            <h6 class="section-subtitle text-center">Meet With</h6>
+            <h6 class="section-title mb-5 text-center">Our Angels</h6>
+            <div class="row">
+                {% for mbr in member %}
+                {%if mbr.user.is_superuser%}
+                <div class="col-sm-6 col-md-4">
+                    
+                    <div class="card text-center mb-4">
+                        <img class="card-img-top inset" src="/media/{{mbr.photo}}" height="250px">
+                        <div class="card-body">
+                            <h6 class="small text-primary font-weight-bold"> <a href="{% url 'team_detail' mbr.team.id %}">{{mbr.team}}</a></h6>
+                            <h5 class="card-title">{{mbr.name}}</h5>
+                            <p>{{mbr.bio}}</p>
+                            <div class="socials">
+                                <a href="{{mbr.linkedin_url}}"><i class="ti-linkedin"></i> </a>
+                                <a href="{{mbr.personal_website_url}}"><i class="ti-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+      </section>
+    <!-- End of Team Sectoin -->
+<!-- Fatcs Section -->
+<section class="has-bg-img bg-img-2">
+    <div class="container text-center">
+      <h6 class="section-subtitle">We Are Awesome</h6>
+      <h6 class="section-title mb-6">Some Fun Fucts</h6>
+      <div class="widget-2 d-flex justify-content-around">
+        <div class="widget-item">
+            <i class="ti-comments"></i> 
+          <h6 class="title">{{ contacts_count }}+</h6>
+          <div class="subtitle">FeedBack Clients</div>
+        </div>
+        <div class="widget-item">
+          <i class="ti-blackboard"></i>
+          <h6 class="title">{{ projects_count }}+</h6>
+          <div class="subtitle">Project Completed</div>
+        </div>
+        <div class="widget-item">
+          <i class="ti-comments-smiley"></i>
+          <h6 class="title">{{comment_count}}+</h6>
+          <div class="subtitle">Comments</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Testimonial Section -->
+    <!-- Blog Section -->
+      <section id="Project">
+        <div class="container">
+            <h6 class="section-subtitle text-center">Newcreative</h6>
+            <h6 class="section-title mb-6 text-center">Our projects</h6>
+            <div class="row">
+                {% for project in projects %}
+                <div class="col-md-4">
+                    <div class="card blog-post my-4 my-sm-5 my-md-0">
+                        <div class="card-body">
+                            <div class="details mb-3">
+                                <a href="{% url 'project_detail' project.id %}#comment"><i class="ti-comments"></i> 164</a>
+                                <a href="{% url 'project_detail' project.id %}"><i class="ti-eye"></i> 425</a>
+                            </div>
+                            <div class="mt-3"></div>
+                            <div class="mb-3"></div>
+                            <a href="{% url 'team_detail' project.created_by.id %}" class="d-flex align-items-center justify-content-center font-weight-bold text-muted my-link">{{project.created_by}}</a>
+                            <div class="mt-3"></div>
+                            <div class="mb-3"></div>
+                            <h5 class="card-title">{{ project.title }}</h5>
+                            <div class="mt-3"></div>
+                            <div class="mb-3"></div>
+                            <p class="description" data-description-id="description-{{project.id}}">{{ project.description|truncatechars:500 }}</p>
+                            <button class="btn btn-light read-more" data-description-id="description-{{project.id}}">Read More...</button><br/>
+                            <date class="card-title d-flex align-items-center justify-content-center"><i class="ti-calendar"> Last_Update : </i> {{project.updated_at|date:"Y-m-d"}}</date>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <script>
+        const readmoreBtns = document.querySelectorAll('.read-more');
+        readmoreBtns.forEach(btn => {
+          const descriptionId = btn.getAttribute('data-description-id');
+          const description = document.querySelector(`[data-description-id="${descriptionId}"]`);
+          const truncatedText = description.innerHTML;
+          btn.addEventListener('click', () => {
+            if (description.innerHTML === truncatedText) {
+                description.innerHTML = `{% for project in projects %}
+                {{ project.description }} {% endfor %}`;
+                btn.innerHTML = 'Read Less';
+              } else {
+                description.innerHTML = truncatedText;
+                btn.innerHTML = 'Read More...';
+              }
+            });
+          });
+      </script>
+    <!-- End of Blog Section -->
+    <section class="has-bg-img py-0">
+        <div class="container">
+            <div class="footer">
+                <div class="footer-lists">
+                    <ul class="list">
+                        <li class="list-head">
+                            <h6 class="font-weight-bold">ABOUT US</h6>
+                        </li>
+                        <li class="list-body">
+                            <a href="#" class="logo">
+                                <img src="/static/assets/imgs/logo.png" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, Creative studio Landing page">
+                                <h6>ArtyProd Creative</h6>
+                            </a>
+                            <p>The agency, "ArtyProd", is a company that specializes in graphic design, audiovisual production, and 3D design. They aim to create a web application that showcases their various services to the public..</p> 
+                            <p class="mt-3">
+                                Copyright <script>document.write(new Date().getFullYear())</script> &copy; <a class="d-inline text-primary" href="javascript:void(0)">ZAMmel adNEn</a>
+                            </p>                   
+                        </li>
+                    </ul>
+                    <ul class="list">
+                        <li class="list-head">
+                            <h6 class="font-weight-bold">USEFUL LINKS</h6>
+                        </li>
+                        <li class="list-body">
+                            <div class="row">
+                                <div class="col">
+                                    <a href="#about">About</a>
+                                    <a href="#service">Service</a>
+                                    <a href="#portfolio">Portfolio</a>
+                                </div>
+                                <div class="col">
+                                    <a href="#team">Team</a>
+                                    <a href="#Project">Project</a>
+                                    <a href="#">Faq</a>                
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="list">
+                        <li class="list-head">
+                            <h6 class="font-weight-bold">CONTACT INFO</h6>
+                        </li>
+                        <li class="list-body">
+                            <p>Contact us and we'll get back to you within 24 hours.</p>
+                            <p><i class="ti-location-pin"></i> PMJ7+8V7, Rte de l'aéroport, km 8</p>
+                            <p><i class="ti-email"></i>  zadnen3@gmail.com</p>
+                            <div class="social-links">
+                                <a href="https://www.facebook.com/zammel.adnen.7" class="link"><i class="ti-facebook"></i></a>
+                                <a href="https://twitter.com/ZammelAdnen1" class="link"><i class="ti-twitter-alt"></i></a>
+                                <a href="mailto:zadnen3@gmail.com" class="link"><i class="ti-google"></i></a>
+                                <a href="https://www.pinterest.fr/" class="link"><i class="ti-pinterest-alt"></i></a>
+                                <a href="https://www.instagram.com/zammel_adnen/?hl=fr" class="link"><i class="ti-instagram"></i></a>
+                                <a href="https://www.linkedin.com/in/zammel-adnen-25260521a/" class="link"><i class="ti-rss"></i></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>    
+        </div>
+    </section>
+
+<!-- core  -->
+<script src="/static/assets/vendors/jquery/jquery-3.4.1.js"></script>
+<script src="/static/assets/vendors/bootstrap/bootstrap.bundle.js"></script>
+
+<!-- bootstrap affix -->
+<script src="/static/assets/vendors/bootstrap/bootstrap.affix.js"></script>
+
+<!-- Creative Studio js -->
+<script src="/static/assets/js/creative-studio.js"></script>
+</body>
+</html>
+
+{% endblock %}
+</body>
+</html>
+{% block styles %}
+<style>
+.my-link:hover {
+    text-decoration: none;
+  }
+.my-link {
+    text-decoration: none;
+  }
+</style>
+{% endblock %}

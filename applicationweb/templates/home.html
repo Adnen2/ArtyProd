@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html style="font-size: 16px;">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="page_type" content="np-template-header-footer-from-plugin">
+    <title>Page 17</title>
+    <link rel="stylesheet" href="https://blocks023-blackfriday.nicepage.io/nicepage.css?version=e96174b9-b0e4-47f6-880b-77874ddb07fe" media="screen">
+    <script class="u-script" type="text/javascript" src="https://capp.nicepage.com/assets/jquery-1.9.1.min.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="https://capp.nicepage.com/bf9e5d79eaa97fca3ee6e327e15ddf41a5846b46/nicepage.js" defer=""></script>
+    <link id="u-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i|Monoton|Yesteryear">
+    {% block styles %}
+    <style class="u-style">
+        .u-section-2 {background-image: linear-gradient(0deg, rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url("/static/assets/imgs/background.jpg"); background-position: 50% 50%}
+.u-section-2 .u-sheet-1 {min-height: 683px; margin-top: 60px; margin-bottom: 60px}
+.u-section-2 .u-text-1 {font-size: 11.25rem; line-height: 1; font-family: Monoton; width: 801px; margin: 60px auto 0}
+.u-section-2 .u-text-2 {font-family: Yesteryear; font-size: 9.375rem; line-height: 1; width: 801px; margin: -75px auto 0}
+.u-section-2 .u-text-3 {text-transform: uppercase; font-size: 3rem; line-height: 1; width: 801px; font-weight: 400; margin: 0 auto 60px} 
+@media (max-width: 1199px){ .u-section-2 .u-sheet-1 {min-height: 544px}
+.u-section-2 .u-text-2 {margin-left: 70px; margin-right: 70px}
+.u-section-2 .u-text-3 {margin-left: 70px; margin-right: 70px} }
+@media (max-width: 991px){ .u-section-2 .u-text-1 {width: 720px; font-size: 9.375rem}
+.u-section-2 .u-text-2 {width: 720px; margin-left: 0; margin-right: 0}
+.u-section-2 .u-text-3 {width: 720px; margin-left: 0; margin-right: 0} }
+@media (max-width: 767px){ .u-section-2 .u-sheet-1 {min-height: 664px}
+.u-section-2 .u-text-1 {font-size: 6.875rem; margin-top: 137px; margin-left: 0; margin-right: 0; width: 540px}
+.u-section-2 .u-text-2 {font-size: 7.5rem; width: 540px; margin-top: -46px}
+.u-section-2 .u-text-3 {width: 540px} }
+@media (max-width: 575px){ .u-section-2 .u-sheet-1 {min-height: 514px}
+.u-section-2 .u-text-1 {font-size: 4.5rem; margin-top: 60px; width: 340px}
+.u-section-2 .u-text-2 {font-size: 6.25rem; margin-top: -34px; width: 340px}
+.u-section-2 .u-text-3 {font-size: 2.25rem; width: 340px; margin-top: -12px} }
+
+
+.wrap {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .button {
+    min-width: 300px;
+    min-height: 60px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 22px;
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+    font-weight: 700;
+    color: #fff;
+    background: #4FD1C5;
+    background: linear-gradient(-45deg, #f75959 0%, #f35587 100%);
+    border: none;
+    border-radius: 1000px;
+    box-shadow: 12px 12px 24px #ff3f5e;
+    transition: all 0.3s ease-in-out 0s;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    padding: 10px;
+    }
+  
+  button::before {
+  content: '';
+    border-radius: 1000px;
+    min-width: calc(300px + 12px);
+    min-height: calc(60px + 12px);
+    border: 6px solid #ff3f5e;
+    box-shadow: 0 0 60px rgba(0,255,203,.64);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all .3s ease-in-out 0s;
+  }
+  
+  .button:hover, .button:focus {
+    color: #fff;
+    transform: translateY(-6px);
+  }
+  
+  button:hover::before, button:focus::before {
+    opacity: 1;
+  }
+  
+  button::after {
+    content: '';
+    width: 30px; height: 30px;
+    border-radius: 100%;
+    border: 6px solid #00FFCB;
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: ring 1.5s infinite;
+  }
+  
+  button:hover::after, button:focus::after {
+    animation: none;
+    display: none;
+  }
+  
+  @keyframes ring {
+    0% {
+      width: 30px;
+      height: 30px;
+      opacity: 1;
+    }
+    100% {
+      width: 300px;
+      height: 300px;
+      opacity: 0;
+    }
+  }
+</style>
+{% endblock %}
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "block023-blackfriday",
+		"url": "https://block023-blackfriday.nicepage.io/Page-17.html"
+}</script>
+    <meta property="og:title" content="Page 17">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#ff3f5e">
+    <link rel="canonical" href="https://block023-blackfriday.nicepage.io/Page-17.html">
+    <meta property="og:url" content="https://block023-blackfriday.nicepage.io/Page-17.html">
+  
+</head>
+{% block content %}
+  <body class="u-body">
+    
+    <section class="u-align-center u-clearfix u-color-scheme-u10 u-color-style-multicolor-1 u-image u-shading u-valign-middle u-section-2" id="sec-5099" data-image-width="1249" data-image-height="739">
+      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <h1 class="u-custom-font u-text u-text-1">Arty Prod</h1>
+        <h3 class="u-custom-font u-text u-text-palette-1-base u-text-2">agency</h3>
+        <p class="u-large-text u-text u-text-variant u-text-3">When I say art you say ArtyProd</p>
+       
+        <div class="wrap">
+            <a href="/applicationweb/"><button class="button">Start</button></a>
+        </div>
+        
+      </div>
+      <br/>
+      <br/>
+      <br/>
+    </section>
+  </body>
+{% endblock %}
+</html>

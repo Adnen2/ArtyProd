@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/static/images/572.png" type="image/x-icon">
+    <title>.blog.com</title>
+    <!-- style css link -->
+    <link rel="stylesheet" href="/static/style.css">
+    <!-- fontawesome css link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+    
+<!-- header section start -->
+
+
+<header>
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="logoBox">
+                <a href="http://127.0.0.1:8000/BlogApplication/"><img src="/static/images/572.png" alt="logo"></a>
+            </div>
+            <div class="searchBox">
+                <form class="form-inline ml-auto" method="GET" action="{% url 'BlogApplication:search' %}">
+                    <input type="search" name="q">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+            <div class="iconBox2">
+                <li><i class="fa-solid fa-house"></i></li>
+                <label><img src="/media/{{profile.avatar}}" alt="user"></label>
+                <i class="fa-solid fa-caret-down"></i>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- header section end -->
+<!-- home section start -->
+
+
+<div class="home">
+    <div class="container">
+        <div class="home-weapper">
+
+            <!-- home left start here -->
+            <div class="home-left">
+
+                <div class="profile">
+                    <img src="/media/{{profile.avatar}}" alt="user">
+                    <h3>{{profile.user.last_name}} {{profile.user.first_name}}</h3>
+                </div>
+               
+                <div class="pages">
+                    <h4 class="mini-headign">Pages</h4>
+                    <label>
+                        <img src="/static/images/Gmail-PNG-Clipart.png" alt="email">
+                        <span>email</span>
+                    </label>
+                </div>
+
+
+                <div class="explore">
+                    <h4 class="mini-headign">Category</h4>
+                    {% for cat in categories %}
+                    <a href="#">{{ cat.name}}</a>
+                    {% endfor %}
+                    <div><label class="darkTheme"> <span></span></label> Apply Dark Theme</div>
+                    <button class="see-more-btn">See more <i class="fa-solid fa-angle-down"></i></button>
+                </div>
+                
+            </div><!-- home left end here -->
+
+            <!-- home center start here -->
+
+            <div class="home-center">
+                <div class="home-center-wrapper">
+                    <div class="fb-post1">
+                        <div class="fb-post1-container">
+                            <div class="fb-post1-header">
+                                <ul>
+                                    <li class="active">popular</li>
+                                </ul>
+                            </div>
+            
+                            <div class="fb-p1-main">
+                                <div class="post-title">
+                                    <img src="{{ post.author.profile.avatar.url }}" alt="user picture">
+                                    <ul>
+                                        <li>
+                                            <h3>{{ post.author.profile.last_name }} {{ post.author.profile.first_name }}
+                                                <span>
+                                                    {% if post.author.profile.is_active %}
+                                                        {{ post.author.profile.is_active }}
+                                                    {% else %}
+                                                        {{ post.author.profile.date_joined }}
+                                                    {% endif %}
+                                                </span>
+                                            </h3>
+                                        </li>
+                                        <li><span>{{ post.created_at }}</span></li>
+                                    </ul>
+                                    <p>
+                                        {{ post.title }}
+                                        {{ post.content }}
+                                        <a href="{% url 'BlogApplication:post_detail' post.id %}">See More</a>
+                                    </p>
+                                </div>
+            
+                                <div class="post-images">
+                                    <div class="post-images1">
+                                        {% if post.image.url|lower|slice:'-4:' == '.mp4' or post.image.url|lower|slice:'-4:' == '.avi' %}
+                                            <video width="400" height="400" controls>
+                                                <source src="/media/{{ post.image }}" type="video/mp4">
+                                            </video>
+                                        {% else %}
+                                            <img src="{{ post.image.url }}" alt="post images 01">
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="like-comment">
+                                    <ul>
+                                        <li>
+                                            <img src="/static/images/love.png" alt="love">
+                                            <img src="/static/images/like.png" alt="like">
+                                            <span>22k like</span>
+                                        </li>
+                                        <li><i class="fa-regular fa-comment-dots"></i> <span>{{ post.num_comments }} comments</span></li>
+                                        <li><i class="fa-solid fa-share-from-square"></i> <span>254 share</span></li>
+                                    </ul>
+                                    <br/>
+                                    <div>
+                                        {% for comment in comments %}
+                                            <li>
+                                                <img src="{{ comment.author.avatar.url }}" alt="user picture">
+                                                <h5>{{ comment.author.user.last_name }} {{ comment.author.user.first_name }}</h5>
+                                                <h6>{{ comment.content }}</h6><p>{{ comment.created_at }}</p>
+                                            </li>
+                                            <br/>
+                                        {% empty %}
+                                            <li>No comments available.</li>
+                                        {% endfor %}
+                                    </div>
+                                    <br/>
+                                    <hr>
+                                    
+                                         <form method="POST" class="comment">
+                                             {% csrf_token %}
+                                             {{ comment_form }}
+                                             <button type="submit"><i class="fas fa-comment"></i></button>
+                                         </form>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- home center wrapper end -->
+            </div> <!-- home center end -->
+            <div class="home-right">
+                <div class="home-right-wrapper">
+                    <div class="event-friend">
+                        <div class="event">
+                            <h3 class="heading" style="color: #0053ff;">You can visite</h3>
+                            <img src="/static/images/artprod.png" alt="event-img">
+                            <div class="event-date">
+                                <h3 id="currentDate"></h3>
+                                <h4>ArtyProd <span>Agency</span></h4>
+                            </div>
+                            <button><i class="fa-regular fa-star"></i><a href="http://127.0.0.1:8000/">ArtyProd<a/></button>
+                        </div>
+                    </div>
+                </div><!-- home right wrapper end -->
+            </div><!-- home right end -->
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- home section end -->
+
+<script>
+    var darkButton = document.querySelector(".darkTheme");
+
+    darkButton.onclick = function(){
+        darkButton.classList.toggle("button-Active");
+        document.body.classList.toggle("dark-color")
+    }
+    function zoomStory(element) {
+        element.classList.toggle('zoomed');
+    }    
+    document.addEventListener("DOMContentLoaded", function() {
+        var currentDateElement = document.getElementById("currentDate");
+        var currentDate = new Date();
+        var day = currentDate.getDate();
+        var monthIndex = currentDate.getMonth();
+        var months = [
+            "January", "February", "March", "April", "May", "June", 
+            "July", "August", "September", "October", "November", "December"
+        ];
+        var month = months[monthIndex];
+        
+        currentDateElement.textContent = day + " " + month;
+    });
+    
+</script>
+
+</body>
+</html>
+{% block styles %}
+<style>
+    li img{
+        width: 40px;
+        float: left;
+        margin-right: 8px;
+        border-radius: 50px;
+    }
+    .comment input{
+        padding: 15px 45px 15px 15px;
+        border-radius: 50px;
+        width: 70%;
+        background: var(--foreground);
+        border: none;
+        box-shadow: 0 2px 5px 0 var(--shadow);
+        color: var(--black);
+    }
+    .comment button{
+        padding: 6px;
+        background: #1877f2;
+        color: white;
+        border-radius: 50px;
+        border: none;
+        margin-bottom: 18px;
+        transition: .4s;
+        width:70px;
+        height:50px;
+        box-shadow: 0 2px 5px 0 var(--shadow);
+    }
+</style>
+{% endblock %}

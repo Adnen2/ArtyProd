@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Start your development with Creative Studio landing page.">
+    <meta name="author" content="Devcrud">
+    <title>ArtyProd</title>
+
+    <!-- font icons -->
+    <link rel="stylesheet" href="/static/assets/vendors/themify-icons/css/themify-icons.css">
+
+    <!-- Bootstrap + Creative Studio main styles -->
+	<link rel="stylesheet" href="/static/assets/css/creative-studio.css">
+    <meta name="description" content="Flipbook  ">
+    <meta name="robots" content="noindex, nofollow">
+ <!--  <meta name="viewport" content="width = 1050, user-scalable = no" /> -->
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta property="og:image" content="https://www.flipbookpdf.net/web/files/flipbooks//1-thumb.jpg">
+   <link href='https://fonts.googleapis.com/css?family=Indie+Flower|Open+Sans:400,700|Ubuntu:400,700|Great+Vibes' rel='stylesheet' type='text/css'>
+
+
+   <script type="text/javascript" src="flipbook/extras/jquery.min.1.7.js"></script>
+   <script type="text/javascript" src="flipbook/extras/jquery-ui-1.8.20.full.min.js"></script>
+   <script type="text/javascript" src="flipbook/extras/modernizr.2.5.3.min.js"></script>
+   <script type="text/javascript" src="flipbook/lib/hash.js"></script>
+       <script type="text/javascript">
+       var flipbookcfg={
+           url: ".\/data\/",
+           cover: 0,
+           numPages: 1,
+           textTip: "Press ESC to exit. Use the keyboard arrows to change the page.",
+           background: ".\/flipbook\/files\/backgrounds\/back14.svg",
+           showSlider: "null",
+           showSocial: "null",
+           showformat: "1",
+           companyLogo: "https:\/\/www.flipbookpdf.net\/web\/site\/img\/logonet.png",
+           title: "",
+           tagtitle: "Flipbook", 
+          description: "", 
+           showDownload: "null",
+           backlink: "https:\/\/www.flipbookpdf.net",
+           opacity: "0.5",
+           name: "7cfc2eb411d2f6f758337477c689e8f508fd8cbd202304.pdf",
+           direction: "ltr", 
+           flipsound: "null", 
+           widthimg: "1488",
+           heightimg: "2105" 
+           
+       };
+   </script>
+   <style>
+   .logo-backs {
+   opacity: 0.5;
+}
+.form-element1 input[type=text], .form-element1 select, .form-element1 textarea {
+border: 1px solid gray;
+padding: 5px;
+min-width: 74px;
+resize: vertical;
+}
+
+.form-element1 {
+margin-top: 10px;
+margin-bottom: 12px;
+margin-left: 65px;
+}
+
+@media only screen and (max-width: 750px) {
+.flipbook-title {
+   display:none!important;
+ }
+.zoom-icon {
+   display:none;
+ }
+
+.controls-pdf {
+   right: 20px!important;
+}  
+   
+ 
+}
+
+
+#ads {
+z-index:100; 
+position: fixed; 
+bottom:14px; 
+text-align: center; 
+padding: 2px; 
+width: 100%;
+}
+
+
+
+
+
+
+
+</style>
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+  <!-- Page Navigation -->
+  <nav class="navbar custom-navbar navbar-expand-lg navbar-dark" data-spy="affix" data-offset-top="20">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="/static/assets/imgs/logo.png" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, Creative studio Landing page">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="http://127.0.0.1:8000/applicationweb/#home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://127.0.0.1:8000/applicationweb/#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://127.0.0.1:8000/applicationweb/#service">Service</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://127.0.0.1:8000/applicationweb/#portfolio">Portfolio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://127.0.0.1:8000/applicationweb/#team">Team</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://127.0.0.1:8000/applicationweb/#Project">Project</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://127.0.0.1:8000/applicationweb/contact/#contact">Contact</a>
+                </li>
+                {% if user.is_authenticated %}
+                <li class="nav-item active">
+                <a class="nav-link" href="#">{{user}}</a>
+                </li>
+                <li class="nav-item active">
+                <a class="nav-link btn btn-primary btn-sm ml-lg-3" href="{% url 'logout' %}">Déconnexion</a>
+                </li>
+
+                {% else %}
+                <li class="nav-item active">
+                <a class="nav-link btn btn-primary btn-sm ml-lg-3" href="{% url 'login' %}">Connexion</a>
+                </li>
+                <li class="nav-item active">
+                <a class="nav-link" href="{% url 'register' %}">Inscription</a>
+                </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>
+    <!-- End Of Page Navigation -->
+
+    <!-- Page Header -->
+    <header class="header">
+      <div class="overlay">
+          <h6 class="subtitle">Small Team With Big Ideas</h6>
+          <h1 class="title">ArtyProd Creative</h1>
+          <div class="buttons text-center">
+              <a href="http://127.0.0.1:8000/applicationweb/#service" class="btn btn-primary rounded w-lg btn-lg my-1">Our Service</a>
+              <a href="http://127.0.0.1:8000/applicationweb/contact/#contact" class="btn btn-outline-light rounded w-lg btn-lg my-1">Contact Us</a>
+          </div>              
+      </div>      
+  </header>
+  <section id="about">
+    <div class="container d-flex justify-content-center">
+        <div class="col-md-7 col-lg-8 text-center">
+            <h6 class="section-subtitle mb-0">{{project.service.title}}</h6>
+            <h6 class="section-title mb-3">{{project.title}}</h6>
+            <p>{{project.description}}</p>
+        </div>
+    </div>
+    <div class="">
+        <div class="row d-flex justify-content-center">
+            {% for detail in details|slice:":3" %}
+                {% if detail.file.url|lower|slice:'-4:' == '.pdf' or detail.file.url|lower|slice:'-4:' == '.txt' %}
+                    <div class="catalog">
+                        <a href="{{ detail.file.url }}" target="_blank">pdf</a>
+                    </div>
+                {% elif detail.file.url|lower|slice:'-4:' == '.mp4' or detail.file.url|lower|slice:'-4:' == '.avi' %}
+                    <div class="col-md-4 video">
+                        <video width="400" height="400" controls>
+                            <source src="{{ detail.file.url }}" type="video/mp4">
+                        </video>
+                    </div>
+                {% else %}
+                    <div class="col-md-4">
+                        <img src="{{ detail.file.url }}" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, Creative studio Landing page" class="w-100 img-thumbnail mb-3" style="height: 400px; width: 400px;">
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+        {% if details|length > 3 %}
+            <div class="text-center mt-4">
+                <button class="btn-primary btn" id="see-more-portfolio">See More details</button>
+            </div>
+            {% endif %}
+    </div>
+    
+    
+    
+    <div class="container mt-5 mb-5">
+        <div class="d-flex justify-content-center row">
+            <div class="d-flex flex-column col-md-8" id="comment">
+                <div class="coment-bottom bg-white p-2 px-4">
+                    <div class="d-flex flex-row add-comment-section mt-4 mb-4">
+                        <img class="img-fluid img-responsive rounded-circle mr-4" src="https://i.imgur.com/qdiP4DB.jpg" width="38"/>
+                        <form method="POST" action="{% url 'project_detail' project.id %}" class="w-100 form-inline">
+                            {% csrf_token %}
+                            <div class="form-group mr-2">
+                                {{ form.content }}
+                            </div>
+                            <div class="form-group mb-0">
+                                <button type="submit" class="btn btn-primary w-md">Comment</button>
+                            </div>
+                        </form>
+                    </div>
+                    {% if comments %}
+                        {% for comment in comments %}
+                            <div class="commented-section mt-2">
+                                <div class="d-flex flex-row align-items-center commented-user">
+                                    <h5 class="mr-2">{{ comment.user }}</h5><span class="dot mb-1"></span><span class="mb-1 ml-2">{{ comment.created_at|date:"F d, Y H:i" }}</span></div>
+                                <div class="comment-text-sm"><span>{{ comment.content }}.</span></div>
+                                <div class="reply-section">
+                                    <div class="d-flex flex-row align-items-center voting-icons"><i class="fa fa-sort-up fa-2x mt-3 hit-voting"></i><i class="fa fa-sort-down fa-2x mb-3 hit-voting"></i><span class="ml-2">10</span><span class="dot ml-2"></span>
+                                        <h6 class="ml-2 mt-1">Reply</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        {% empty %}
+                            <div class="comment-text-sm"><span>No comments yet.</span></div>
+                        {% endfor %}
+                    {% else %}
+                        <p>No comments yet.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+</section>
+
+  <section class="has-bg-img py-0">
+    <div class="container">
+        <div class="footer">
+            <div class="footer-lists">
+                <ul class="list">
+                    <li class="list-head">
+                        <h6 class="font-weight-bold">ABOUT US</h6>
+                    </li>
+                    <li class="list-body">
+                        <a href="#" class="logo">
+                            <img src="/static/assets/imgs/logo.png" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, Creative studio Landing page">
+                            <h6>ArtyProd Creative</h6>
+                        </a>
+                        <p>The agency, "ArtyProd", is a company that specializes in graphic design, audiovisual production, and 3D design. They aim to create a web application that showcases their various services to the public..</p> 
+                        <p class="mt-3">
+                            Copyright <script>document.write(new Date().getFullYear())</script> &copy; <a class="d-inline text-primary" href="javascript:void(0)">ZAMmel adNEn</a>
+                        </p>                   
+                    </li>
+                </ul>
+                <ul class="list">
+                    <li class="list-head">
+                        <h6 class="font-weight-bold">USEFUL LINKS</h6>
+                    </li>
+                    <li class="list-body">
+                        <div class="row">
+                            <div class="col">
+                                <a href="#about">About</a>
+                                <a href="#service">Service</a>
+                                <a href="#portfolio">Portfolio</a>
+                            </div>
+                            <div class="col">
+                                <a href="#team">Team</a>
+                                <a href="#Project">Project</a>
+                                <a href="#">Faq</a>                
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="list">
+                    <li class="list-head">
+                        <h6 class="font-weight-bold">CONTACT INFO</h6>
+                    </li>
+                    <li class="list-body">
+                        <p>Contact us and we'll get back to you within 24 hours.</p>
+                        <p><i class="ti-location-pin"></i> PMJ7+8V7, Rte de l'aéroport, km 8</p>
+                        <p><i class="ti-email"></i>  zadnen3@gmail.com</p>
+                        <div class="social-links">
+                            <a href="https://www.facebook.com/zammel.adnen.7" class="link"><i class="ti-facebook"></i></a>
+                            <a href="https://twitter.com/ZammelAdnen1" class="link"><i class="ti-twitter-alt"></i></a>
+                            <a href="mailto:zadnen3@gmail.com" class="link"><i class="ti-google"></i></a>
+                            <a href="https://www.pinterest.fr/" class="link"><i class="ti-pinterest-alt"></i></a>
+                            <a href="https://www.instagram.com/zammel_adnen/?hl=fr" class="link"><i class="ti-instagram"></i></a>
+                            <a href="https://www.linkedin.com/in/zammel-adnen-25260521a/" class="link"><i class="ti-rss"></i></a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>    
+    </div>
+</section>
+
+<!-- core  -->
+<script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
+<script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
+
+<!-- bootstrap affix -->
+<script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
+
+<!-- Creative Studio js -->
+<script src="assets/js/creative-studio.js"></script>
+
+</body>
+</html>
